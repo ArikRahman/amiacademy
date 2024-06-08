@@ -1,3 +1,4 @@
+import 'package:amiacademy/features/math/presentation/screens/math_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Ami Academy'),
+      // home: const MyHomePage(title: 'Ami Academy'),
+      home: MathScreen(),
     );
   }
 }
