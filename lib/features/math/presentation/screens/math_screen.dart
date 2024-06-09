@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:amiacademy/features/math/presentation/widgets/math_question_widget.dart';
+import 'package:amiacademy/features/math/presentation/widgets/derivatives_practice.dart';
 
 class MathScreen extends StatelessWidget {
   @override
@@ -10,7 +11,8 @@ class MathScreen extends StatelessWidget {
         title: Text('Ami Academy'),
       ),
       body: Center(
-        child: MathQuestionWidget(),
+        // child: MathQuestionWidget(),
+        child: DerivativeQuestionWidget(),
       ),
     );
   }

@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
-class MathQuestionWidget extends StatefulWidget {
+class DerivativeQuestionWidget extends StatefulWidget {
+  const DerivativeQuestionWidget({super.key});
+
   @override
-  _MathQuestionWidgetState createState() => _MathQuestionWidgetState();
+  // ignore: library_private_types_in_public_api
+  _DerivativeQuestionWidgetState createState() =>
+      _DerivativeQuestionWidgetState();
 }
 
-class _MathQuestionWidgetState extends State<MathQuestionWidget> {
+class _DerivativeQuestionWidgetState extends State<DerivativeQuestionWidget> {
   final TextEditingController _controller = TextEditingController();
   String _resultMessage = '';
+  final String _currentQuestion = 'd/dx of x²';
+  final String _correctAnswer = '2x';
 
   void _checkAnswer() {
-    if (_controller.text == '2') {
+    if (_controller.text.trim() == _correctAnswer) {
       setState(() {
-        _resultMessage = 'Correct! 1 + 1 = 2';
+        _resultMessage = 'Correct! The derivative of x^2 is 2x.';
       });
     } else {
       setState(() {
@@ -28,14 +34,18 @@ class _MathQuestionWidgetState extends State<MathQuestionWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         const Text(
-          'What is 1 + 1?',
-          style: TextStyle(fontSize: 24),
+          'What is the derivative of the following function?',
+          style: TextStyle(fontSize: 18),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          _currentQuestion,
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: TextField(
             controller: _controller,
-            keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               hintText: 'Enter your answer',
               border: OutlineInputBorder(),
